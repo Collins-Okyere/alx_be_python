@@ -10,8 +10,7 @@ match priority:
     case "low":
         reminder = f"'{task}' is a low priority task."
     case _:
-        reminder = "Invalid priority entered. Please use high, medium, or low."
-
+        reminder = "Invalid priority entered. Please choose high, medium, or low."
 
 if time_bound == "yes":
     reminder += " It requires immediate attention today!"
