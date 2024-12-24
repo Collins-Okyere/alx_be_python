@@ -11,13 +11,10 @@ match priority:
         reminder = f"'{task}' is a low priority task."
     case _:
         reminder = "Invalid priority entered. Please choose high, medium, or low."
-
 if time_bound == "yes":
     reminder += " It requires immediate attention today!"
 elif time_bound == "no":
     reminder += " Consider completing it when you have free time."
 else:
     reminder += " Time sensitivity was not specified correctly."
-
-print("\nReminder:")
 print(reminder)
