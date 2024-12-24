@@ -12,12 +12,12 @@ match priority:
     case _:
         reminder = "Invalid priority entered. Please use high, medium, or low."
 
-if time_bound == "yes":
-    reminder += "that requires immediate attention today!"
-elif time_bound == "no":
-    reminder += ". Consider completing it when you have free time."
-else:
-    reminder += ". Time sensitivity was not specified correctly."
+    if time_bound == "yes":
+        reminder += "that requires immediate attention today!"
+    elif time_bound == "no":
+        reminder += ". Consider completing it when you have free time."
+    else:
+        reminder += ". Time sensitivity was not specified correctly."
 
 print("\nReminder:")
 print(reminder)
