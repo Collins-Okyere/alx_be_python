@@ -1,5 +1,4 @@
-def perform_operation(num1: float, num2: float, operation: str):
-    # Check the operation and perform the corresponding arithmetic operation
+def perform_operation(num1, num2, operation):
     if operation == 'add':
         result = num1 + num2
     elif operation == 'subtract':
