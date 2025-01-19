@@ -1,31 +1,26 @@
 def safe_divide(numerator, denominator):
     """
-    Safely divides two numbers, handling division by zero and non-numeric inputs.
+    Safely divides two numbers, handling errors gracefully.
 
-    :param numerator: The numerator for division.
-    :param denominator: The denominator for division.
-    :return: A string with the result or an appropriate error message.
+    Args:
+        numerator: The numerator, expected to be a number or convertible to float.
+        denominator: The denominator, expected to be a number or convertible to float.
+
+    Returns:
+        The result of the division or an appropriate error message.
     """
     try:
-        num = float(numerator)
-        den = float(denominator)
+        # Convert inputs to floats
+        numerator = float(numerator)
+        denominator = float(denominator)
+
+        # Handle division by zero
+        if denominator == 0:
+            return "Error: Cannot divide by zero."
+
+        # Perform the division
+        return f"The result of the division is {numerator / denominator}"
+
     except ValueError:
+        # Handle non-numeric inputs
         return "Error: Please enter numeric values only."
-    try:
-        result = num / den
-    except ZeroDivisionError:
-        return "Error: Cannot divise by zero."
-    return f"The result of the division is {result}"
-
-def main():
-    if len(syn.argv) !=3:
-        print("Usag: python main.py <numerator> <denominator>")
-        sys.exit(1)
-
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
-
-    result = safe_divide(numerator, denominator)
-    print(result)
-if __name__ == "__main__":
-    main()
